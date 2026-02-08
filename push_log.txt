@@ -1,0 +1,74 @@
+git : remote: error: GH013: 
+Repository rule violations found for 
+refs/heads/test-branch-rules-check.  
+      
+At line:1 char:11
++ $output = git push origin 
+main:test-branch-rules-check 2>&1 | 
+Out-Str ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (remote: error: ...-chec  
+  k.        :String) [], RemoteExc   
+ eption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+remote: 
+remote: - GITHUB PUSH PROTECTION     
+   
+remote:   GÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇö
+GÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöG
+ÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇ
+öGÇöGÇöGÇöGÇöGÇöGÇöGÇö        
+remote:     Resolve the following 
+violations before pushing again      
+  
+remote: 
+remote:     - Push cannot contain 
+secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to 
+resolve a blocked push        
+remote:      https://docs.github.com/
+code-security/secret-scanning/working
+-with-secret-scanning-and-push-protec
+tion/working-with-push-protection-fro
+m-the-command-line#resolving-a-blocke
+d-push        
+remote:             
+remote:             
+remote:       GÇöGÇö Aiven Service 
+Password GÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöG
+ÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇöGÇ
+öGÇöGÇöGÇöGÇöGÇöGÇö        
+remote:        locations:        
+remote:          - commit: 4266fac591
+df323ce111eeb80d597072f15d5f76       
+ 
+remote:            path: query-system
+/QuerySystem/src/main/resources/appli
+cation.properties:16        
+remote:             
+remote:        (?) To push, remove 
+secret from commit(s) or follow this 
+URL to allow the secret.        
+remote:        https://github.com/Adb
+hutha10/Query-Management-System/secur
+ity/secret-scanning/unblock-secret/39
+LbbmCCsU18kVgkwunh1gKERCr        
+remote:             
+remote: 
+remote: 
+To https://github.com/Adbhutha10/Quer
+y-Management-System.git
+ ! [remote rejected] main -> 
+test-branch-rules-check (push 
+declined due to repository rule 
+violations)
+error: failed to push some refs to 'h
+ttps://github.com/Adbhutha10/Query-Ma
+nagement-System.git'
+

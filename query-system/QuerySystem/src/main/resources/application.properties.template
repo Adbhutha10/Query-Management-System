@@ -1,0 +1,38 @@
+spring.application.name=QuerySystem
+
+# ===============================
+# SERVER
+# ===============================
+server.port=8080
+
+# ===============================
+# DATABASE (MySQL)
+# ===============================
+spring.datasource.url=jdbc:mysql://localhost:3306/querysystem?useSSL=false&serverTimezone=UTC
+spring.datasource.username=CHANGE_ME
+spring.datasource.password=CHANGE_ME
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# ===============================
+# JPA / HIBERNATE
+# ===============================
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# ===============================
+# LOGGING (Optional but helpful)
+# ===============================
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+
+# ===============================
+# EMAIL CONFIGURATION (SMTP)
+# ===============================
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=CHANGE_ME@gmail.com
+spring.mail.password=CHANGE_ME
+
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
