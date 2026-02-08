@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../config';
 import {
     LayoutDashboard,
     ClipboardList,
@@ -35,7 +36,7 @@ const DashboardPage: React.FC = () => {
         try {
             const userId = token;
 
-            const userRes = await fetch(`http://localhost:8080/api/auth/user/${userId}`);
+            const userRes = await fetch(`${API_BASE_URL}/api/auth/user/${userId}`);
             if (userRes.ok) {
                 const userData = await userRes.json();
                 setProfile({
@@ -50,7 +51,7 @@ const DashboardPage: React.FC = () => {
                 });
             }
 
-            const qRes = await fetch(`http://localhost:8080/api/queries/user/${userId}`, {
+            const qRes = await fetch(`${API_BASE_URL}/api/queries/user/${userId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
@@ -82,7 +83,7 @@ const DashboardPage: React.FC = () => {
         setIsSubmitting(true);
         setMessage('');
         try {
-            const response = await fetch('http://localhost:8080/api/queries/submit', {
+            const response = await fetch(API_BASE_URL + '/api/queries/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

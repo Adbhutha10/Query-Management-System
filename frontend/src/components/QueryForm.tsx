@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 
 
 interface FormFields {
@@ -91,7 +92,7 @@ const QueryForm: React.FC<QueryFormProps> = ({ onSubmitSuccess }) => {
         setIsSubmitting(true);
         try {
             // First signup the user
-            const signupResponse = await fetch('http://localhost:8080/api/auth/signup', {
+            const signupResponse = await fetch(API_BASE_URL + '/api/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

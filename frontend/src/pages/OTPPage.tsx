@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../config';
 
 
 const OTPPage: React.FC = () => {
@@ -57,7 +58,7 @@ const OTPPage: React.FC = () => {
                 endpoint = 'verify-signup-otp';
             }
 
-            const response = await fetch(`http://localhost:8080/api/auth/${endpoint}`, {
+            const response = await fetch(`${API_BASE_URL}/api/auth/${endpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -70,7 +71,7 @@ const OTPPage: React.FC = () => {
             if (data.message && data.message.includes('successful')) {
 
                 if (type === 'login') {
-                    const userResponse = await fetch(`http://localhost:8080/api/auth/user/${data.userId}`);
+                    const userResponse = await fetch(`${API_BASE_URL}/api/auth/user/${data.userId}`);
                     const userData = await userResponse.json();
                     login(data.userId, {
                         userId: data.userId,
@@ -143,7 +144,7 @@ const OTPPage: React.FC = () => {
                             onClick={async () => {
                                 try {
                                     const endpoint = type === 'login' ? 'login' : 'signup';
-                                    const res = await fetch(`http://localhost:8080/api/auth/${endpoint}`, {
+                                    const res = await fetch(`${API_BASE_URL}/api/auth/${endpoint}`, {
                                         method: 'POST',
                                         headers: { 'Content-Type': 'application/json' },
                                         body: JSON.stringify({ email: email }),

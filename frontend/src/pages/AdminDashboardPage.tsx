@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 import { LogOut, CheckCircle, LayoutGrid } from 'lucide-react';
 
 
@@ -22,7 +23,7 @@ const AdminDashboardPage: React.FC = () => {
     const fetchQueries = async () => {
         if (!token) return;
         try {
-            const response = await fetch('http://localhost:8080/api/admin/queries', {
+            const response = await fetch(API_BASE_URL + '/api/admin/queries', {
                 headers: { 'X-ADMIN-ID': token }
             });
             const data = await response.json();
@@ -35,7 +36,7 @@ const AdminDashboardPage: React.FC = () => {
     const updateStatus = async (queryId: string, newStatus: string) => {
         if (!token) return;
         try {
-            const response = await fetch('http://localhost:8080/api/admin/reply', {
+            const response = await fetch(API_BASE_URL + '/api/admin/reply', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
