@@ -1,4 +1,4 @@
-# Kiddoo - Query Management System
+# Query Management System
 
 A full-stack web application for managing user queries with admin oversight. Built with React, TypeScript, Java Spring Boot, and MySQL.
 
